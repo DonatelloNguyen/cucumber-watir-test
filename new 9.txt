@@ -1,0 +1,17 @@
+driver.find_element(:id, "user_username").send_keys("admin1")
+driver.find_element(:id, "user_password").send_keys("admin1")
+driver.find_element(:name, "commit").click
+driver.find_element(:link_text, "Events").click
+driver.find_element(:xpath, "id('attendance-calendar')/body[@class='nav-md']/div[@class='container body']/div[@class='main_container']/div[@class='right_col ']/div[@class='event-dashboard']/div[@class='page-title']/div[@class='title_left']/button[@class='btn btn-primary']").click
+driver.find_element(:id, "descr").send_keys("casdtte")
+driver.find_element(:xpath, "id('EventNew')/div[@class='modal-dialog']/div[@class='modal-content']/div[@class='modal-footer']/button[@class='btn btn-primary add_event']").click
+driver.find_element(:xpath, "id('attendance-calendar')/body[@class='nav-md']/div[@class='container body']/div[@class='main_container']/div[@class='right_col ']/div[@class='event-dashboard']/div[@class='page-title']/div[@class='title_left']/button[@class='btn btn-primary']").click
+driver.find_element(:id, "descr").send_keys("no date")
+driver.find_element(:xpath, "id('EventNew')/div[@class='modal-dialog']/div[@class='modal-content']/div[@class='modal-footer']/button[@class='btn btn-primary add_event']").click
+Selenium::WebDriver::Support::Select.new(driver.find_element(:id, "event-filter-option")).select_by(:text, "All")
+driver.find_element(:xpath, "id('attendance-calendar')/body[@class='nav-md']/div[@class='container body']/div[@class='main_container']/div[@class='right_col ']/div[@class='event-dashboard']/div[@class='page-title']/div[@class='title_left']/button[@class='btn btn-primary']").click
+driver.find_element(:id, "descr").send_keys("previous date")
+driver.find_element(:xpath, "id('attendance-calendar')/body[@class='nav-md modal-open']/div[@class='daterangepicker ltr show-calendar opensright']/div[@class='drp-buttons']/button[@class='applyBtn btn btn-sm btn-primary']").click
+driver.find_element(:xpath, "id('EventNew')/div[@class='modal-dialog']/div[@class='modal-content']/div[@class='modal-footer']/button[@class='btn btn-primary add_event']").click
+driver.find_element(:partial_link_text, "Jeff Bezos (admin)").click
+driver.find_element(:partial_link_text, "Log Out").click

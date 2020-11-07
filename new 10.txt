@@ -1,0 +1,23 @@
+driver.find_element(:id, "user_username").send_keys("employee1")
+driver.find_element(:id, "user_password").send_keys("employee1")
+driver.find_element(:name, "commit").click
+driver.find_element(:link_text, "Events").click
+driver.find_element(:xpath, "id('attendance-calendar')/body[@class='nav-md']/div[@class='container body']/div[@class='main_container']/div[@class='right_col ']/div[@class='event-dashboard']/div[@class='page-title']/div[@class='title_left']/button[@class='btn btn-primary']").click
+driver.find_element(:id, "descr").send_keys("manager approve this please")
+driver.find_element(:xpath, "id('EventNew')/div[@class='modal-dialog']/div[@class='modal-content']/div[@class='modal-footer']/button[@class='btn btn-primary add_event']").click
+driver.find_element(:xpath, "id('attendance-calendar')/body[@class='nav-md']/div[@class='container body']/div[@class='main_container']/div[@class='right_col ']/div[@class='event-dashboard']/div[@class='page-title']/div[@class='title_left']/button[@class='btn btn-primary']").click
+driver.find_element(:id, "descr").send_keys("im sick")
+Selenium::WebDriver::Support::Select.new(driver.find_element(:id, "category_id")).select_by(:text, "Sick")
+driver.find_element(:xpath, "id('EventNew')/div[@class='modal-dialog']/div[@class='modal-content']/div[@class='modal-footer']/button[@class='btn btn-primary add_event']").click
+driver.find_element(:xpath, "id('attendance-calendar')/body[@class='nav-md']/div[@class='container body']/div[@class='main_container']/div[@class='top_nav']/div[@class='nav_menu']/nav[1]/ul[@class='nav navbar-nav navbar-right']/li[@class='']/a[@class='user-profile dropdown-toggle']/span[1]").click
+driver.find_element(:partial_link_text, "Log Out").click
+driver.find_element(:id, "user_username").send_keys("manager1")
+driver.find_element(:id, "user_password").send_keys("manager1")
+driver.find_element(:name, "commit").click
+driver.find_element(:link_text, "Events").click
+driver.find_element(:xpath, "id('eventTable')/tbody[1]/tr[@class='even']/td[8]/div[@class='row']/div[@class='col-lg-6 col-md-12 col-sm-12']/button[@class='btn btn-basic change_status']/span[1]").click
+driver.find_element(:link_text, "Approve").click
+Selenium::WebDriver::Support::Select.new(driver.find_element(:id, "event-filter-option")).select_by(:text, "Approved")
+driver.find_element(:xpath, "id('eventTable')/tbody[1]/tr[@class='odd']/td[8]/div[@class='row']/div[@class='col-md-12 col-sm-12']/span[@class='event_status btn btn-success']").click
+Selenium::WebDriver::Support::Select.new(driver.find_element(:id, "event-filter-option")).select_by(:text, "All")
+driver.find_element(:xpath, "id('eventTable')/tbody[1]/tr[@class='even']/td[8]/div[@class='row']/div[@class='col-md-12 col-sm-12']/span[@class='event_status btn btn-success']").click
