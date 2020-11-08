@@ -1,5 +1,6 @@
 require 'watir'
-
+require 'watir-webdriver'
+require 'rubygems'
 
 
 

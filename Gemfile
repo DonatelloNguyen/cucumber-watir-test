@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'watir'
+
 gem 'rspec'
 gem 'cucumber'
+gem "watir", "~> 6.5"

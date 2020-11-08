@@ -88,7 +88,7 @@ PLATFORMS
 DEPENDENCIES
   cucumber
   rspec
-  watir
+  watir (~> 6.5)
 
 BUNDLED WITH
    2.1.4
