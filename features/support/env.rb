@@ -4,9 +4,11 @@ require 'rubygems'
 
 
 
+
 Before do
 @browser = Watir::Browser.new :chrome
 @browser.window.maximize
+
 end
 After do |scenario|
   if scenario.failed?

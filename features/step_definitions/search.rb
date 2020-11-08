@@ -109,3 +109,29 @@ Then('Manager2 should not see the list') do
   filename = DateTime.now.strftime("screenshot"+"%d%b%Y%H%M%S")
   @browser.screenshot.save ("#{filename}.png")
 end
+
+#calendar
+
+Given('Employee logs in and create event via calendar') do
+  @browser.goto("http://blowfish.tester-calendar.c66.me/")
+  @browser.text_field(:id => "user_username").send_keys("employee1")
+  @browser.text_field(:id => "user_password").send_keys("employee1")
+  @browser.button(:name => "commit").click
+  sleep 3
+  @browser.link(:visible_text => "Calendar").click
+end
+
+When('Employee selects date') do
+#  @browser.link(:visible_text => "19").click
+  @browser.div(:css => "div.fc-row.fc-week.fc-widget-content.fc-rigid").click
+  @browser.textarea(:id => "descr").send_keys("sik")
+
+  end
+
+
+Then('Employee submit request') do
+  @browser.button(:visible_text => "Save changes").click
+  @browser.select_list(:id => "event-filter-option-calendar").select("Pending")
+  sleep 3
+  
+end
