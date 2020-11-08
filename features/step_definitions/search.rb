@@ -94,6 +94,18 @@ Then('Manager declines the request') do
   @browser.link(:text => "Deny").click
   @browser.link(:visible_text => "Elon Musk (manager1)").click
   @browser.link(:visible_text => "Log Out").click
+end
 
+#Employee1 Manager 2 checks
+When('Manager2 checks list') do
+  @browser.text_field(:id => "user_username").send_keys("manager2")
+  @browser.text_field(:id => "user_password").send_keys("manager2")
+  @browser.button(:name => "commit").click
+end
 
+Then('Manager2 should not see the list') do
+  @browser.link(:visible_text => "Events").click
+  @browser.div(:visible_text => "No data available in table").present?
+  filename = DateTime.now.strftime("screenshot"+"%d%b%Y%H%M%S")
+  @browser.screenshot.save ("#{filename}.png")
 end
